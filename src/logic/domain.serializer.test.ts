@@ -1,4 +1,8 @@
-import { extractCountriesFromDomainList } from "./domains.utils";
+import {
+  extractCountriesFromDomainList,
+  extractDomainsClassification,
+  extractDomainsSubClassification,
+} from "./domains.serializer";
 
 describe("extract domains informations", () => {
   const domainsListExample = [
@@ -17,10 +21,19 @@ describe("extract domains informations", () => {
   });
 
   it("should return a list of classification prefixes", () => {
-    expect(extractCountriesFromDomainList(domainsListExample)).toEqual([
+    expect(extractDomainsClassification(domainsListExample)).toEqual([
       "OK",
       "NK",
       "BL",
+    ]);
+  });
+
+  it("should return a list of subclassification prefixes", () => {
+    expect(extractDomainsSubClassification(domainsListExample)).toEqual([
+      "WOK",
+      "WOL",
+      "NPP",
+      "NRP",
     ]);
   });
 });
