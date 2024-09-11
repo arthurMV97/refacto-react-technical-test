@@ -1,7 +1,7 @@
 import {
+  extractClassificationFromDomainList,
   extractCountriesFromDomainList,
-  extractDomainsClassification,
-  extractDomainsSubClassification,
+  extractSubClassificationFromDomainList,
 } from "./domains.serializer";
 
 describe("extract domains informations", () => {
@@ -21,7 +21,7 @@ describe("extract domains informations", () => {
   });
 
   it("should return a list of classification prefixes", () => {
-    expect(extractDomainsClassification(domainsListExample)).toEqual([
+    expect(extractClassificationFromDomainList(domainsListExample)).toEqual([
       "OK",
       "NK",
       "BL",
@@ -29,7 +29,7 @@ describe("extract domains informations", () => {
   });
 
   it("should return a list of subclassification prefixes", () => {
-    expect(extractDomainsSubClassification(domainsListExample)).toEqual([
+    expect(extractSubClassificationFromDomainList(domainsListExample)).toEqual([
       "WOK",
       "WOL",
       "NPP",

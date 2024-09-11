@@ -15,10 +15,10 @@ export const extractCountriesFromDomainList = (domains: string[]) => {
   return extractDomainsInformationByStringPosition(domains, [0, 2]);
 };
 
-export const extractDomainsClassification = (domains: string[]) => {
+export const extractClassificationFromDomainList = (domains: string[]) => {
   return extractDomainsInformationByStringPosition(domains, [3, 5]);
 };
 
-export const extractDomainsSubClassification = (domains: string[]) => {
+export const extractSubClassificationFromDomainList = (domains: string[]) => {
   return extractDomainsInformationByStringPosition(domains, [6, 9]);
 };
